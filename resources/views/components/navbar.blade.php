@@ -42,7 +42,7 @@
                     <li class="nav-item">
                         {{-- Attivare quando esiste la rotta article.create (US1) --}}
                         <a class="btn-presto btn-sm" href="#">
-                            + Inserisci annuncio
+                            Inserisci annuncio
                         </a>
                     </li>
                     <li class="nav-item">

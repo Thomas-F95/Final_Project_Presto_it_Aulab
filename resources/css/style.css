@@ -24,8 +24,14 @@ body {
     background-color: var(--color-cream);
     color: var(--color-espresso);
 }
-
+/* BUTTONS SIZE SMALL */
+.btn-presto.btn-sm,
+.btn-presto-outline.btn-sm {
+    padding: 6px 14px;
+    font-size: .825rem;
+}
 /* BUTTON */
+
 .btn-presto {
     background-color: var(--color-terra-600);
     color: #fff;
@@ -160,5 +166,27 @@ body {
 .navbar-user {
     font-size: .875rem;
     font-weight: 500;
+    color: var(--color-mocha);
+    background-color: var(--color-sand-50);
+    border: 1px solid var(--color-sand-200);
+    border-radius: var(--radius-md);
+    padding: 4px 10px;
+}
+.navbar-divider {
+    width: 1px;
+    height: 20px;
+    background-color: var(--color-sand-200);
+}
+.navbar-presto .navbar-nav.align-items-lg-center li {
+    display: flex;
+    align-items: center;
+}
+
+/* WELCOME PAGE*/
+.welcome-title {
+    font-family: var(--font-display);
+    color: var(--color-espresso);
+}
+.welcome-subtitle {
     color: var(--color-mocha);
 }

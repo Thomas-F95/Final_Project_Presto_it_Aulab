@@ -202,3 +202,8 @@ body {
 .auth-link:hover {
     color: var(--color-terra-800);
 }
+.auth-error {
+    color: var(--color-brick);
+    font-size: .8rem;
+    margin-top: 4px;
+}

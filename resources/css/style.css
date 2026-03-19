@@ -134,3 +134,31 @@ body {
 .footer-divider {
     border-color: rgba(232, 213, 183, .15);
 }
+
+/* NAVBAR */
+.navbar-presto {
+    background-color: #fff;
+    border-bottom: 1px solid var(--color-sand-200);
+}
+.navbar-presto .navbar-brand {
+    font-family: var(--font-display);
+    color: var(--color-terra-600);
+    font-size: 1.4rem;
+}
+.navbar-presto .navbar-brand:hover {
+    color: var(--color-terra-800);
+}
+.navbar-presto .nav-link {
+    color: var(--color-mocha);
+    font-size: .9rem;
+    font-weight: 500;
+}
+.navbar-presto .nav-link:hover,
+.navbar-presto .nav-link.active {
+    color: var(--color-terra-600);
+}
+.navbar-user {
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--color-mocha);
+}

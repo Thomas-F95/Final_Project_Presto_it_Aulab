@@ -190,3 +190,15 @@ body {
 .welcome-subtitle {
     color: var(--color-mocha);
 }
+/* Auth link and divider */
+.auth-divider {
+    border-color: var(--color-sand-200);
+}
+.auth-link {
+    color: var(--color-terra-600);
+    font-weight: 500;
+    text-decoration: none;
+}
+.auth-link:hover {
+    color: var(--color-terra-800);
+}

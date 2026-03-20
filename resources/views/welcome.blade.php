@@ -1,6 +1,7 @@
 <x-layout>
     <x-slot:title>Home — Presto.it</x-slot:title>
 
+    {{-- Hero --}}
     <div class="row justify-content-center mt-5">
         <div class="col-12 col-md-8 text-center">
             <h1 class="display-4 fw-bold welcome-title">Presto.it</h1>
@@ -14,23 +15,25 @@
                     <a href="{{ route('register') }}" class="btn-presto-outline btn-lg">Registrati gratis</a>
                 @endguest
                 @auth
-                    {{-- Attivare quando esiste la rotta article.create (US1) --}}
-                    <a href="#" class="btn-presto-outline btn-lg">+ Inserisci annuncio</a>
+                    <a href="{{ route('article.create') }}" class="btn-presto-outline btn-lg">+ Inserisci annuncio</a>
                 @endauth
             </div>
-            <div class="row height-custom justify-content-center align-items-center py-5"></div>
-            @foreles ($articles as $articel)
-            <div class="col-12 col-md-3">
-                <x-card :article="$articel" />
-            </div>
-            @empty
-                <div class="col-12">
-                    <h3 class="text-center">Non sono stati creati articoli</h3>
-                </div>
-                @endforeles
-
-            </div>
         </div>
+    </div>
 
-    </x-layout>
+    {{-- Ultimi annunci: attivare nella US2 --}}
+    {{--
+    <div class="row justify-content-center mt-5">
+        @forelse ($articles as $article)
+            <div class="col-12 col-md-3">
+                <x-card :article="$article" />
+            </div>
+        @empty
+            <div class="col-12">
+                <h3 class="text-center">Non sono stati creati articoli</h3>
+            </div>
+        @endforelse
+    </div>
+    --}}
 
+</x-layout>

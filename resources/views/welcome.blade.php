@@ -20,16 +20,19 @@
             </div>
             <div class="row height-custom justify-content-center align-items-center py-5"></div>
             @foreles ($articles as $articel)
-                <div class="col-12 col-md-3">
-                    <x-card :article="$articel" />
-                </div>
+            <div class="col-12 col-md-3">
+                <x-card :article="$articel" />
+            </div>
             @empty
                 <div class="col-12">
                     <h3 class="text-center">Non sono stati creati articoli</h3>
                 </div>
-            @endforeles
+                @endforeles
 
+            </div>
         </div>
-    </div>
 
-</x-layout>
+    </x-layout>
+
+
+    <p> Thomas </p>

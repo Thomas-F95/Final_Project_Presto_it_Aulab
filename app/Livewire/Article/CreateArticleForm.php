@@ -52,7 +52,8 @@ class CreateArticleForm extends Component
         ]);
 
         $this->reset(['title', 'description', 'price', 'category_id']);
-        $this->success = true;
+        // Redirect to index before showing success message
+        $this->redirectRoute('article.index');
     }
 
     public function render()

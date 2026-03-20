@@ -44,7 +44,7 @@
                         <a class="btn-presto btn-sm" href="{{ route('article.create') }}">+ Inserisci annuncio</a>
                     </li>
                     <li class="nav-item">
-                        {{-- Attivare quando esiste la rotta article.mine (US1) --}}
+                        {{-- Attivare quando esiste la rotta article.index (US1) --}}
                         <a class="nav-link" aria-current="page" href="{{ route('article.index') }}">I miei annunci</a>
                     </li>
                     <li class="nav-item">

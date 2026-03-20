@@ -9,7 +9,11 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        //
+        $articles = Article::with(['category', 'user'])
+            ->orderBy('created_at', 'desc')
+            ->paginate(12);
+
+        return view('article.index', compact('articles'));
     }
 
     public function show(Article $article)

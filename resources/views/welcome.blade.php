@@ -10,7 +10,7 @@
             </p>
             <div class="d-flex gap-3 justify-content-center">
                 {{-- Attivare quando esiste la rotta article.index (US2) --}}
-                <a href="#" class="btn-presto btn-lg">Vedi annunci</a>
+                <a href="{{ route('article.index') }}" class="btn-presto btn-lg">Vedi annunci</a>
                 @guest
                     <a href="{{ route('register') }}" class="btn-presto-outline btn-lg">Registrati gratis</a>
                 @endguest

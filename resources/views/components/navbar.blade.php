@@ -45,7 +45,7 @@
                     </li>
                     <li class="nav-item">
                         {{-- Attivare quando esiste la rotta article.mine (US1) --}}
-                        <a class="nav-link" href="#">I miei annunci</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('articel.index') }}">I miei annunci</a>
                     </li>
                     <li class="nav-item">
                         <div class="navbar-divider d-none d-lg-block"></div>

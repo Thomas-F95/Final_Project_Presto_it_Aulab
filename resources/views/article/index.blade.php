@@ -1,10 +1,16 @@
 <x-layout>
-    <x-slot:title>Risultati per "{{ $query }}" — Presto</x-slot:title>
+    <x-slot:title>Tutti gli annunci — Presto</x-slot:title>
 
     <div class="row mb-4 mt-3">
         <div class="col">
-            <h1 class="welcome-title display-5">Risultati per "{{ $query }}"</h1>
-            <p class="welcome-subtitle">{{ $articles->total() }} annunci trovati</p>
+            {{-- Mostra il nome della categoria se filtrata, altrimenti il titolo generico --}}
+            <h1 class="welcome-title display-5">
+                {{ isset($category) ? $category->name : 'Tutti gli annunci' }}
+            </h1>
+            {{-- Mostra la categoria attiva nel sottotitolo, altrimenti il testo generico --}}
+            <p class="welcome-subtitle">
+                {{ isset($category) ? 'Annunci nella categoria ' . $category->name : 'Scopri gli ultimi articoli in vendita' }}
+            </p>
         </div>
     </div>
 

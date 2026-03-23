@@ -42,7 +42,7 @@ class ArticleController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query', '');
-
+        // Filtra gli articoli per query : $q -> Eloquent che mi permette di raggruppare condizioni logiche e definire query complesse
         $articles = Article::with(['category', 'user'])
             ->where(function ($q) use ($query) {
                 $q->where('title', 'like', '%' . $query . '%')

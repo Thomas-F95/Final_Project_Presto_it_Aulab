@@ -16,8 +16,8 @@
 
     <div class="row">
 
-        {{-- Sidebar categorie --}}
-        <x-category-sidebar />
+        {{-- Passa la categoria attiva al component --}}
+        <x-category-sidebar :category="$category ?? null" />
 
         {{-- Griglia risultati --}}
         <div class="col">
@@ -28,7 +28,7 @@
                     </div>
                 @empty
                     <div class="col-12 text-center">
-                        <p class="welcome-subtitle">Nessun annuncio trovato per "{{ $query }}".</p>
+                        <p class="welcome-subtitle">Nessun annuncio in questa categoria.</p>
                         <a href="{{ route('article.index') }}" class="btn-presto mt-3">
                             Vedi tutti gli annunci
                         </a>

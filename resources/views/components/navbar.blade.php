@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-presto">
+<nav class="navbar navbar-expand-xl navbar-presto">
     <div class="container">
 
         {{-- Brand --}}
@@ -13,25 +13,24 @@
         <div class="collapse navbar-collapse" id="navbarMain">
 
             {{-- Link sinistra --}}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-3 mb-2 mb-xl-0">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('homepage') ? 'active' : '' }}"
-                        href="{{ route('homepage') }}">
-                        Home
-                    </a>
+                        href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     {{-- Attivare quando esiste la rotta article.index (US2) --}}
                     <a class="nav-link" href="{{ route('article.index') }}">Annunci</a>
                 </li>
             </ul>
+
             {{-- Barra di ricerca --}}
-            <div class="mx-auto">
+            <div class="me-auto my-2 my-xl-0">
                 @livewire('search-bar')
             </div>
 
             {{-- Destra: @guest / @auth --}}
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
+            <ul class="navbar-nav ms-3 mb-2 mb-xl-0 align-items-xl-center gap-2">
 
                 @guest
                     <li class="nav-item">
@@ -44,15 +43,13 @@
 
                 @auth
                     <li class="nav-item">
-                        {{-- Attivare quando esiste la rotta article.create (US1) --}}
                         <a class="btn-presto btn-sm" href="{{ route('article.create') }}">+ Inserisci annuncio</a>
                     </li>
                     <li class="nav-item">
-                        {{-- Attivare quando esiste la rotta article.index (US1) --}}
-                        <a class="nav-link" aria-current="page" href="{{ route('article.index') }}">I miei annunci</a>
+                        <a class="nav-link" href="#">I miei annunci</a>
                     </li>
-                    <li class="nav-item">
-                        <div class="navbar-divider d-none d-lg-block"></div>
+                    <li class="nav-item d-none d-xl-block">
+                        <div class="navbar-divider"></div>
                     </li>
                     <li class="nav-item">
                         <span class="navbar-user">{{ auth()->user()->name }}</span>
@@ -60,9 +57,7 @@
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="btn-presto-outline btn-sm">
-                                Logout
-                            </button>
+                            <button type="submit" class="btn-presto-outline btn-sm">Logout</button>
                         </form>
                     </li>
                 @endauth

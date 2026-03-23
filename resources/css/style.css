@@ -269,8 +269,9 @@ body {
     border-top: 1px solid var(--color-sand-200);
     padding-top: .75rem;
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
     margin-top: auto;
+    flex-wrap: wrap;
 }
 .article-card-link {
     color: var(--color-terra-600);
@@ -497,4 +498,14 @@ body {
 }
 .search-view-all:hover {
     background: var(--color-sand-200);
+}
+
+/* Search input responsive */
+@media (max-width: 1199px) {
+    .search-input {
+        width: 100%;
+    }
+    .search-wrapper {
+        width: 100%;
+    }
 }

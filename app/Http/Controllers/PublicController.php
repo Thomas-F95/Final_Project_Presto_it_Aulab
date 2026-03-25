@@ -4,18 +4,46 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Mail\RevisorRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 
 class PublicController extends Controller
 {
     public function homepage()
     {
-        // Ultimi 4 articoli per la homepage
+        // Ultimi 4 articoli per la homepage -solo annunci approvati
         $articles = Article::with(['category', 'user'])
+            ->where('status', 'approved')
             ->orderBy('created_at', 'desc')
             ->take(4)
             ->get();
 
         return view('welcome', compact('articles'));
+    }
+    // Mostra la pagina work-with-us
+    public function workWithUs()
+    {
+        return view('work-with-us');
+    }
+
+    // Gestisce il submit del form e invia la mail
+    public function sendRevisorRequest(Request $request)
+    {
+        $request->validate([
+            'motivation' => ['required', 'string', 'min:20'],
+        ], [
+            'motivation.required' => 'La motivazione è obbligatoria.',
+            'motivation.min'      => 'La motivazione deve essere di almeno 20 caratteri.',
+        ]);
+
+        Mail::to(config('mail.from.address'))->send(new RevisorRequest(
+            userName: auth()->user()->name,
+            userEmail: auth()->user()->email,
+            motivation: $request->input('motivation'),
+        ));
+
+        return redirect()->route('work-with-us')->with('success', 'Richiesta inviata! Ti contatteremo presto.');
     }
 }

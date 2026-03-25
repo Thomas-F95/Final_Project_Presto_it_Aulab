@@ -529,3 +529,77 @@ body {
         color: var(--color-terra-600);
     }
 }
+
+/* Revisors  Pannel */
+.revisor-card {
+    background: #fff;
+    border: 1px solid var(--color-sand-200);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+.revisor-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.revisor-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-espresso);
+    margin-bottom: .5rem;
+}
+.revisor-meta {
+    font-size: .8rem;
+    color: var(--color-mocha);
+}
+.revisor-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-sand-200);
+}
+.btn-revisor-approve {
+    background-color: var(--color-sage);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 10px 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+.btn-revisor-approve:hover {
+    background-color: #1f5c43;
+}
+.btn-revisor-reject {
+    background-color: var(--color-brick);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 10px 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+.btn-revisor-reject:hover {
+    background-color: #962d22;
+}
+.revisor-empty {
+    text-align: center;
+    padding: 3rem;
+    background: #fff;
+    border: 1px solid var(--color-sand-200);
+    border-radius: var(--radius-lg);
+}
+.alert-error-presto {
+    background-color: #FDF0EE;
+    color: var(--color-brick);
+    border: 1px solid #F0B8B2;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-size: .9rem;
+    font-weight: 500;
+}

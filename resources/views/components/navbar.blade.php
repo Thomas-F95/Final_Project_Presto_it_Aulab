@@ -46,6 +46,9 @@
                             annuncio</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('work-with-us') }}">Lavora con noi</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">I miei annunci</a>
                     </li>
                     <li class="nav-item d-none d-xl-block">
@@ -54,6 +57,11 @@
                     <li class="nav-item">
                         <span class="navbar-user">{{ auth()->user()->name }}</span>
                     </li>
+                    @if (auth()->user()->isRevisor())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('revisor.index') }}">Pannello revisori</a>
+                        </li>
+                    @endif
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

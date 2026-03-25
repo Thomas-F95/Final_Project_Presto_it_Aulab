@@ -11,39 +11,45 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        // Lista tutti gli articoli paginati
+        // Lista tutti gli articoli paginati - Solo annunci approvati
         $articles = Article::with(['category', 'user'])
+            ->where('status', 'approved')
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
         return view('article.index', compact('articles'));
     }
-
+    // Solo annunci approvati nel dettaglio
     public function show(Article $article)
     {
+        if ($article->status !== 'approved') {
+            abort(404);
+        }
         // Carica le relazioni necessarie
         $article->load('category', 'user');
 
         return view('article.show', compact('article'));
     }
 
-    // Filtra gli articoli per categoria
+    // Filtra gli articoli per categoria -solo annunci approvati
     public function byCategory(Category $category)
     {
         $articles = Article::with(['category', 'user'])
             ->where('category_id', $category->id)
+            ->where('status', 'approved')
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
         return view('article.index', compact('articles', 'category'));
     }
 
-    // Pagina risultati ricerca full-text
+    // Pagina risultati ricerca full-text - solo annunci approvati
     public function search(Request $request)
     {
         $query = $request->input('query', '');
         // Filtra gli articoli per query : $q -> Eloquent che mi permette di raggruppare condizioni logiche e definire query complesse
         $articles = Article::with(['category', 'user'])
+            ->where('status', 'approved')
             ->where(function ($q) use ($query) {
                 $q->where('title', 'like', '%' . $query . '%')
                     ->orWhere('description', 'like', '%' . $query . '%')

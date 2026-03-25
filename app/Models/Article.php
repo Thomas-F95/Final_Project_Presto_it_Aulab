@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 
 
-#[Fillable(['user_id', 'category_id', 'title', 'description', 'price'])]
+#[Fillable(['user_id', 'category_id', 'title', 'description', 'price', 'status'])]
 class Article extends Model
 {
     public function user()
@@ -17,5 +17,11 @@ class Article extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    // Scope per filtrare solo gli annunci in attesa
+    public function scopePending($query)
+    {
+        return $query->where('status', 'pending');
     }
 }

@@ -40,7 +40,7 @@
                 </p>
                 @auth
                     {{-- Attivare quando esiste la rotta work-with-us (US3) --}}
-                    {{-- <a href="{{ route('work-with-us') }}" class="btn-presto-outline btn-sm">Candidati ora</a> --}}
+                    <a href="{{ route('work-with-us') }}" class="btn-presto-outline btn-sm">Candidati ora</a>
                 @endauth
                 @guest
                     <a href="{{ route('register') }}" class="btn-presto btn-sm">Registrati</a>

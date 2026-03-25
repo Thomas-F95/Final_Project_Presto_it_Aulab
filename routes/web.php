@@ -3,8 +3,16 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RevisorController;
+
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+// Lavora con noi — pubblica
+Route::get('/work-with-us', [PublicController::class, 'workWithUs'])->name('work-with-us');
+
+// Invio richiesta revisore — solo utenti loggati
+Route::post('/work-with-us', [PublicController::class, 'sendRevisorRequest'])->name('work-with-us.send')->middleware('auth');
+
 // Search before show method
 Route::get('/articles/search', [ArticleController::class, 'search'])->name('article.search');
 // Articles routes
@@ -24,4 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/article/create', function () {
         return view('article.create');
     })->name('article.create');
+});
+
+// Revisor routes -Auth, middleware revisor
+Route::middleware(['auth', 'revisor'])->prefix('revisor')->group(function () {
+    Route::get('/', [RevisorController::class, 'index'])->name('revisor.index');
+    Route::post('/approve/{article}', [RevisorController::class, 'approve'])->name('revisor.approve');
+    Route::post('/reject/{article}', [RevisorController::class, 'reject'])->name('revisor.reject');
+    Route::post('/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
 });

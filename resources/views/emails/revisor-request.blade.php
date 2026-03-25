@@ -36,7 +36,7 @@
             <p style="color: #6B5C52; font-size: .8rem; margin: 0;">
                 Per rendere questo utente revisore usa il comando:<br>
                 <code style="background: #F5EFE6; padding: 4px 8px; border-radius: 6px; color: #B5622E;">
-                    php artisan make:revisor {{ $userEmail }}
+                    php artisan app:make-revisor {{ $userEmail }}
                 </code>
             </p>
         </div>

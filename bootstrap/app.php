@@ -14,6 +14,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'revisor' => \App\Http\Middleware\RevisorMiddleware::class,
         ]);
+        // Applica SetLocale a tutte le richieste web
+        $middleware->web(append: [
+            \App\Http\Middleware\SetLocale::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

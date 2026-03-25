@@ -4,11 +4,14 @@
         {{-- Brand --}}
         <a class="navbar-brand" href="{{ route('homepage') }}">Presto.it</a>
 
-        {{-- Toggler mobile --}}
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
-            aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        {{-- Lang switcher + Toggler mobile --}}
+        <div class="d-flex align-items-center gap-3 ms-auto d-xl-none">
+            <x-lang-switcher />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarMain">
 
@@ -16,10 +19,10 @@
             <ul class="navbar-nav me-3 mb-2 mb-xl-0">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('homepage') ? 'active' : '' }}"
-                        href="{{ route('homepage') }}">Home</a>
+                        href="{{ route('homepage') }}">{{ __('messages.home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('article.index') }}">Annunci</a>
+                    <a class="nav-link" href="{{ route('article.index') }}">{{ __('messages.articles') }}</a>
                 </li>
             </ul>
 
@@ -33,23 +36,23 @@
 
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Accedi</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn-presto btn-sm" href="{{ route('register') }}">Registrati</a>
+                        <a class="btn-presto btn-sm" href="{{ route('register') }}">{{ __('messages.register') }}</a>
                     </li>
                 @endguest
 
                 @auth
                     <li class="nav-item">
-                        <a class="btn-presto btn-sm btn-navbar-create" href="{{ route('article.create') }}">Inserisci
-                            annuncio</a>
+                        <a class="btn-presto btn-sm btn-navbar-create"
+                            href="{{ route('article.create') }}">{{ __('messages.insert_article') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('work-with-us') }}">Lavora con noi</a>
+                        <a class="nav-link" href="{{ route('work-with-us') }}">{{ __('messages.work_with_us') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">I miei annunci</a>
+                        <a class="nav-link" href="#">{{ __('messages.my_articles') }}</a>
                     </li>
                     <li class="nav-item d-none d-xl-block">
                         <div class="navbar-divider"></div>
@@ -59,18 +62,23 @@
                     </li>
                     @if (auth()->user()->isRevisor())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('revisor.index') }}">Pannello revisori</a>
+                            <a class="nav-link" href="{{ route('revisor.index') }}">{{ __('messages.revisor_panel') }}</a>
                         </li>
                     @endif
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="btn-presto-outline btn-sm">Logout</button>
+                            <button type="submit" class="btn-presto-outline btn-sm">{{ __('messages.logout') }}</button>
                         </form>
                     </li>
                 @endauth
 
             </ul>
+
+            {{-- Lang switcher — solo desktop --}}
+            <div class="d-none d-xl-flex align-items-center ms-3">
+                <x-lang-switcher />
+            </div>
 
             {{-- Barra di ricerca — solo mobile, sotto i link --}}
             <div class="d-xl-none w-100 mt-2 mb-1">

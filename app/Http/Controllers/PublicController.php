@@ -22,6 +22,18 @@ class PublicController extends Controller
 
         return view('welcome', compact('articles'));
     }
+    // Cambia la lingua e salva in sessione
+    public function setLocale(string $locale)
+    {
+        // Accetta solo lingue supportate
+        if (!in_array($locale, config('app.available_locales'))) {
+            abort(400);
+        }
+
+        session(['locale' => $locale]);
+
+        return redirect()->back();
+    }
     // Mostra la pagina work-with-us
     public function workWithUs()
     {

@@ -5,45 +5,39 @@
             {{-- Colonna 1: Brand --}}
             <div class="col-12 col-md-4">
                 <h5 class="fw-bold mb-3 footer-brand">Presto.it</h5>
-                <p class="small mb-3 footer-text">
-                    Il portale numero uno per vendere e comprare articoli di ogni tipo.
-                    Veloce, sicuro e alla portata di tutti.
-                </p>
+                <p class="small mb-3 footer-text">{{ __('messages.footer_desc') }}</p>
                 {{-- Social icons: da aggiungere in seguito --}}
             </div>
 
             {{-- Colonna 2: Link utili --}}
             <div class="col-12 col-md-4">
-                <h6 class="text-uppercase fw-bold mb-3 small footer-heading">Link utili</h6>
+                <h6 class="text-uppercase fw-bold mb-3 small footer-heading">{{ __('messages.useful_links') }}</h6>
                 <ul class="list-unstyled mb-0">
                     <li class="mb-2">
-                        <a href="{{ route('homepage') }}" class="footer-link small">Home</a>
+                        <a href="{{ route('homepage') }}" class="footer-link small">{{ __('messages.home') }}</a>
                     </li>
                     <li class="mb-2">
-                        {{-- Attivare quando esiste la rotta article.index (US2) --}}
-                        <a href="#" class="footer-link small">Tutti gli articoli</a>
+                        <a href="{{ route('article.index') }}"
+                            class="footer-link small">{{ __('messages.all_articles') }}</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="footer-link small">Chi siamo</a>
+                        <a href="#" class="footer-link small">{{ __('messages.about') }}</a>
                     </li>
                     <li>
-                        <a href="#" class="footer-link small">Contatti</a>
+                        <a href="#" class="footer-link small">{{ __('messages.contacts') }}</a>
                     </li>
                 </ul>
             </div>
 
             {{-- Colonna 3: Diventa revisore --}}
             <div class="col-12 col-md-4">
-                <h6 class="text-uppercase fw-bold mb-3 small footer-heading">Vuoi guadagnare?</h6>
-                <p class="small mb-3 footer-text">
-                    Diventa revisore della nostra community e aiutaci a rendere il portale più sicuro.
-                </p>
+                <h6 class="text-uppercase fw-bold mb-3 small footer-heading">{{ __('messages.earn') }}</h6>
+                <p class="small mb-3 footer-text">{{ __('messages.earn_desc') }}</p>
                 @auth
-                    {{-- Attivare quando esiste la rotta work-with-us (US3) --}}
-                    <a href="{{ route('work-with-us') }}" class="btn-presto-outline btn-sm">Candidati ora</a>
+                    <a href="{{ route('work-with-us') }}" class="btn-presto-outline btn-sm">{{ __('messages.apply') }}</a>
                 @endauth
                 @guest
-                    <a href="{{ route('register') }}" class="btn-presto btn-sm">Registrati</a>
+                    <a href="{{ route('register') }}" class="btn-presto btn-sm">{{ __('messages.register') }}</a>
                 @endguest
             </div>
 
@@ -51,12 +45,15 @@
 
         <hr class="footer-divider my-4">
 
-        <div class="row">
-            <div class="col-12 text-center">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-8 text-center text-md-start">
                 <p class="small mb-0 footer-copy">
-                    &copy; {{ date('Y') }} Presto.it — Tutti i diritti riservati.
-                    Realizzato dal Team Presto.
+                    {{ __('messages.rights', ['year' => date('Y')]) }}
                 </p>
+            </div>
+            {{-- Selettore lingua nel footer --}}
+            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end mt-3 mt-md-0">
+                <x-lang-switcher />
             </div>
         </div>
 

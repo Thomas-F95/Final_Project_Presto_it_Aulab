@@ -7,6 +7,9 @@ use App\Http\Controllers\RevisorController;
 
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+
+// Cambio lingua — salva in sessione
+Route::get('/lang/{locale}', [PublicController::class, 'setLocale'])->name('lang.switch');
 // Lavora con noi — pubblica
 Route::get('/work-with-us', [PublicController::class, 'workWithUs'])->name('work-with-us');
 

@@ -1,6 +1,12 @@
 <x-layout>
     <x-slot:title>Tutti gli annunci — Presto</x-slot:title>
 
+     @if (session('message'))
+        <div id="flash-message" class="alert-success-presto mb-4" role="alert">
+            {{ session('message') }}
+        </div>
+    @endif
+    
     <div class="row mb-4 mt-3">
         <div class="col">
             {{-- Mostra il nome della categoria se filtrata, altrimenti il titolo generico --}}

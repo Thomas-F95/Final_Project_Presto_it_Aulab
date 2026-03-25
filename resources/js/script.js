@@ -16,3 +16,22 @@ function changeSlide(direction) {
     images[currentIndex].classList.add('active');
 }
 
+// # Script per nascondere il messaggio dopo 5 secondi
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Cerca l'elemento con ID 'flash-message'
+    const flashMessage = document.getElementById('flash-message');
+
+    // Se l'elemento esiste in questa pagina, fa partire il timer
+    if (flashMessage) {
+        setTimeout(() => {
+            // Effetto dissolvenza
+            flashMessage.style.transition = 'opacity 0.5s ease';
+            flashMessage.style.opacity = '0';
+
+            // Rimuove l'elemento dopo la transizione
+            setTimeout(() => flashMessage.remove(), 500);
+        }, 4000);
+    }
+});
+

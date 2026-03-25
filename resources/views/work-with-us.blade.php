@@ -10,7 +10,7 @@
             </p>
 
             @if (session('success'))
-                <div class="alert-success-presto mb-4">{{ session('success') }}</div>
+                <div id="flash-message" class="alert-success-presto mb-4">{{ session('success') }}</div>
             @endif
 
             @auth

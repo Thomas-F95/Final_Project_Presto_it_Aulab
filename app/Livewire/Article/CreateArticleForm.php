@@ -59,6 +59,8 @@ class CreateArticleForm extends Component
         $this->reset(['title', 'description', 'price', 'category_id']);
         // Redirect to index before showing success message
         $this->redirectRoute('article.index');
+
+        session()->flash('message', 'Annuncio inserito con successo!');
     }
 
     // Passa le categorie ordinate alla view

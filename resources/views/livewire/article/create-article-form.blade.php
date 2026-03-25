@@ -1,10 +1,4 @@
 <div>
-    {{-- Messaggio di conferma --}}
-    @if ($success)
-        <div class="alert-success-presto mb-4" role="alert">
-            Annuncio inserito con successo!
-        </div>
-    @endif
 
     <form wire:submit="store">
 

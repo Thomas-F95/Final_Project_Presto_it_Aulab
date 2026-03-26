@@ -52,6 +52,8 @@ return [
     'full_name'         => 'Full name',
     'confirm_password'  => 'Confirm password',
     'already_account'   => 'Already have an account?',
+    'email_placeholder' => 'name@example.com',
+    'name_placeholder'  => 'John Doe',
 
     // Hero
     'hero_subtitle'     => 'The number one portal to buy and sell items of all kinds.',

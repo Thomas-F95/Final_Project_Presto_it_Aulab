@@ -73,4 +73,12 @@ return [
     'reject'            => 'Rechazar',
     'no_pending'        => 'No hay anuncios en espera de revision.',
     'back_home'         => 'Volver al inicio',
+
+    // Work with us
+    'work_with_us_title'    => 'Trabaja con nosotros',
+    'work_with_us_subtitle' => 'Conviertete en revisor de la comunidad Presto y ayudanos a mantener el portal seguro.',
+    'motivation_label'      => 'Por que quieres ser revisor?',
+    'motivation_placeholder' => 'Cuentanos tu motivacion...',
+    'send_application'      => 'Enviar solicitud',
+    'login_required'        => 'Debes estar registrado para solicitar ser revisor.',
 ];

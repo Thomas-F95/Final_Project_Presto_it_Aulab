@@ -73,4 +73,12 @@ return [
     'reject'            => 'Rifiuta',
     'no_pending'        => 'Nessun annuncio in attesa di revisione.',
     'back_home'         => 'Torna alla home',
+
+    // Work with us
+    'work_with_us_title'    => 'Lavora con noi',
+    'work_with_us_subtitle' => 'Diventa revisore della community Presto e aiutaci a mantenere il portale sicuro e affidabile.',
+    'motivation_label'      => 'Perche vuoi diventare revisore?',
+    'motivation_placeholder' => 'Raccontaci la tua motivazione...',
+    'send_application'      => 'Invia candidatura',
+    'login_required'        => 'Devi essere registrato per candidarti come revisore.',
 ];

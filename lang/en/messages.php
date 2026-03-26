@@ -73,4 +73,12 @@ return [
     'reject'            => 'Reject',
     'no_pending'        => 'No listings waiting for review.',
     'back_home'         => 'Back to home',
+
+    // Work with us
+    'work_with_us_title'    => 'Work with us',
+    'work_with_us_subtitle' => 'Become a Presto community revisor and help us keep the portal safe and reliable.',
+    'motivation_label'      => 'Why do you want to become a revisor?',
+    'motivation_placeholder' => 'Tell us your motivation...',
+    'send_application'      => 'Send application',
+    'login_required'        => 'You must be registered to apply as a revisor.',
 ];

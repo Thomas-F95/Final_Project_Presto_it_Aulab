@@ -6,13 +6,13 @@ return [
     'articles'          => 'Annunci',
     'login'             => 'Accedi',
     'register'          => 'Registrati',
-    'logout'            => 'Logout',
+    'logout'            => 'Esci',
     'my_articles'       => 'I miei annunci',
-    'insert_article'    => '+ Inserisci annuncio',
-    'revisor_panel'     => 'Pannello revisori',
+    'insert_article'    => 'Inserisci Annuncio',
+    'revisor_panel'     => 'Revisori',
     'work_with_us'      => 'Lavora con noi',
     'search'            => 'Cerca',
-    'search_placeholder' => 'Cerca annunci...',
+    'search_placeholder' => 'Cerca...',
 
     // Homepage
     'hero_title'        => 'Presto.it',
@@ -52,4 +52,25 @@ return [
     'full_name'         => 'Nome completo',
     'confirm_password'  => 'Conferma password',
     'already_account'   => 'Hai già un account?',
+
+    // Hero
+    'hero_subtitle'     => 'Il portale numero uno per vendere e comprare articoli di ogni tipo.',
+    'view_articles'     => 'Vedi annunci',
+    'register_free'     => 'Registrati gratis',
+    'insert_article_btn' => '+ Inserisci annuncio',
+    'latest_articles'   => 'Ultimi annunci',
+    'view_all'          => 'Vedi tutti gli annunci →',
+    'no_articles'       => 'Nessun annuncio ancora pubblicato.',
+    'all_articles_title' => 'Tutti gli annunci',
+    'discover'          => 'Scopri gli ultimi articoli in vendita',
+
+    // Revisor Pannel
+    'revisor_title'     => 'Pannello Revisori',
+    'revisor_subtitle'  => 'Revisiona gli annunci in attesa di approvazione',
+    'revisor_undo'      => 'Annulla ultima operazione',
+    'revisor_sent_by'   => 'Inviato da',
+    'approve'           => 'Approva',
+    'reject'            => 'Rifiuta',
+    'no_pending'        => 'Nessun annuncio in attesa di revisione.',
+    'back_home'         => 'Torna alla home',
 ];

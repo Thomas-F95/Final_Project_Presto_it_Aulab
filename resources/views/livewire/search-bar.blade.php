@@ -3,8 +3,8 @@
 
     <form wire:submit="search" class="d-flex align-items-center gap-2">
         <div class="search-input-wrapper">
-            <input type="text" wire:model.live.debounce.300ms="query" class="search-input" placeholder="Cerca annunci..."
-                autocomplete="off">
+            <input type="text" wire:model.live.debounce.300ms="query" class="search-input"
+                placeholder="{{ __('messages.search_placeholder') }}" autocomplete="off">
 
             {{-- Dropdown risultati --}}
             @if (strlen($query) >= 2)
@@ -29,6 +29,6 @@
             @endif
         </div>
 
-        <button type="submit" class="btn-presto btn-sm">Cerca</button>
+        <button type="submit" class="btn-presto btn-sm">{{ __('messages.search') }}</button>
     </form>
 </div>

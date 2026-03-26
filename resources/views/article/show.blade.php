@@ -4,16 +4,16 @@
     <div class="row justify-content-center mt-4">
         <div class="col-12 col-lg-8">
 
-            {{-- Breadcrumb --}}
+            {{-- Breadcrumb con categoria tradotta --}}
             <nav class="mb-4">
                 <ol class="breadcrumb-presto">
                     <li>
-                        <a href="{{ route('article.index') }}" class="auth-link">Annunci</a>
+                        <a href="{{ route('article.index') }}" class="auth-link">{{ __('messages.articles') }}</a>
                     </li>
                     <li class="breadcrumb-separator">›</li>
                     <li>
                         <a href="{{ route('article.byCategory', $article->category) }}" class="auth-link">
-                            {{ $article->category->name }}
+                            {{ $article->category->translated_name }}
                         </a>
                     </li>
                     <li class="breadcrumb-separator">›</li>
@@ -21,7 +21,7 @@
                 </ol>
             </nav>
 
-            {{-- Carosello immagini segnaposto (US2) --}}
+            {{-- Carosello immagini segnaposto -- verra sostituito con immagini reali nella US5 --}}
             <div class="article-carousel mb-4">
                 @for ($i = 1; $i <= 3; $i++)
                     <img src="https://picsum.photos/seed/{{ $article->id }}{{ $i }}/800/400"
@@ -32,12 +32,13 @@
                 <button class="carousel-btn carousel-btn-next" onclick="changeSlide(1)">›</button>
             </div>
 
-            {{-- Dettaglio --}}
+            {{-- Dettaglio annuncio --}}
             <div class="article-show-card">
 
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <div>
-                        <span class="article-card-category">{{ $article->category->name }}</span>
+                        {{-- Categoria tradotta nella lingua corrente --}}
+                        <span class="article-card-category">{{ $article->category->translated_name }}</span>
                         <h1 class="article-show-title">{{ $article->title }}</h1>
                     </div>
                     <span class="article-show-price">€ {{ number_format($article->price, 2, ',', '.') }}</span>
@@ -50,8 +51,9 @@
                 <hr class="auth-divider my-3">
 
                 <div class="d-flex justify-content-between align-items-center">
+                    {{-- Meta informazioni -- venditore e data --}}
                     <span class="article-show-meta">
-                        Venduto da <strong>{{ $article->user->name }}</strong>
+                        {{ __('messages.sold_by') }} <strong>{{ $article->user->name }}</strong>
                     </span>
                     <span class="article-show-meta">
                         {{ $article->created_at->diffForHumans() }}

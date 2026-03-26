@@ -7,12 +7,12 @@ return [
     'login'             => 'Login',
     'register'          => 'Sign up',
     'logout'            => 'Logout',
-    'my_articles'       => 'My listings',
-    'insert_article'    => '+ Post a listing',
-    'revisor_panel'     => 'Revisor panel',
-    'work_with_us'      => 'Work with us',
+    'my_articles'       => 'My ads',
+    'insert_article'    => '+ Ad',
+    'revisor_panel'     => 'Revisors',
+    'work_with_us'      => 'Work',
     'search'            => 'Search',
-    'search_placeholder' => 'Search listings...',
+    'search_placeholder' => 'Search...',
 
     // Homepage
     'hero_title'        => 'Presto.it',
@@ -52,4 +52,25 @@ return [
     'full_name'         => 'Full name',
     'confirm_password'  => 'Confirm password',
     'already_account'   => 'Already have an account?',
+
+    // Hero
+    'hero_subtitle'     => 'The number one portal to buy and sell items of all kinds.',
+    'view_articles'     => 'Browse listings',
+    'register_free'     => 'Sign up free',
+    'insert_article_btn' => '+ Post a listing',
+    'latest_articles'   => 'Latest listings',
+    'view_all'          => 'View all listings →',
+    'no_articles'       => 'No listings published yet.',
+    'all_articles_title' => 'All listings',
+    'discover'          => 'Discover the latest items for sale',
+
+    // Revisor pannel
+    'revisor_title'     => 'Revisor Panel',
+    'revisor_subtitle'  => 'Review listings waiting for approval',
+    'revisor_undo'      => 'Undo last action',
+    'revisor_sent_by'   => 'Sent by',
+    'approve'           => 'Approve',
+    'reject'            => 'Reject',
+    'no_pending'        => 'No listings waiting for review.',
+    'back_home'         => 'Back to home',
 ];

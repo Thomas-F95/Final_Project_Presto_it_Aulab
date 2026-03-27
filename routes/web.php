@@ -4,6 +4,8 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\CartController;
+
 
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
@@ -43,4 +45,13 @@ Route::middleware(['auth', 'revisor'])->prefix('revisor')->group(function () {
     Route::post('/approve/{article}', [RevisorController::class, 'approve'])->name('revisor.approve');
     Route::post('/reject/{article}', [RevisorController::class, 'reject'])->name('revisor.reject');
     Route::post('/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
+});
+
+// Rotte carrello — solo utenti loggati
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/add/{article}', [CartController::class, 'add'])->name('cart.add');
+    Route::delete('/cart/remove/{cartItem}', [CartController::class, 'remove'])->name('cart.remove');
+    Route::delete('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+    Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });

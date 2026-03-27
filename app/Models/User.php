@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->role === 'revisor';
     }
+
+    // Un utente ha molti articoli nel carrello
+    public function cartItems()
+    {
+        return $this->hasMany(CartItem::class);
+    }
 }

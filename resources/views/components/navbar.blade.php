@@ -71,6 +71,15 @@
                             <button type="submit" class="btn-presto-outline btn-sm">{{ __('messages.logout') }}</button>
                         </form>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('cart.index') }}" class="nav-link cart-nav-link">
+                            🛒
+                            @php $cartCount = auth()->user()->cartItems()->count(); @endphp
+                            @if ($cartCount > 0)
+                                <span class="cart-badge">{{ $cartCount }}</span>
+                            @endif
+                        </a>
+                    </li>
                 @endauth
 
             </ul>

@@ -118,4 +118,7 @@ return [
     'cart_cleared'          => 'Carrello svuotato.',
     'cart_error'            => 'Articolo non disponibile.',
     'cart_own_article'      => 'Non puoi aggiungere un tuo articolo al carrello.',
+
+    // messages description
+    'price_hint' => 'Usa il punto come separatore decimale. Es: 10.00 = dieci euro, 10000 = diecimila euro.',
 ];

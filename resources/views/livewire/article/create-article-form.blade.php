@@ -30,9 +30,14 @@
         {{-- Prezzo --}}
         <div class="mb-3">
             <label for="price" class="presto-label">{{ __('messages.price') }}</label>
-            <input type="number" id="price" wire:model="price"
-                class="presto-input @error('price') is-invalid @enderror" placeholder="Es. 49.99" min="0"
-                step="0.01">
+            <div class="input-group">
+
+                <input type="number" id="price" wire:model="price"
+                    class="presto-input @error('price') is-invalid @enderror" placeholder="Es. 49.99" min="0"
+                    step="0.01">
+            </div>
+            {{-- Nota esplicativa per evitare errori di formattazione --}}
+            <small class="price-hint">{{ __('messages.price_hint') }}</small>
             @error('price')
                 <div class="auth-error">{{ $message }}</div>
             @enderror

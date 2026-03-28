@@ -118,4 +118,7 @@ return [
     'cart_cleared'          => 'Cart cleared.',
     'cart_error'            => 'Item not available.',
     'cart_own_article'      => 'You cannot add your own listing to the cart.',
+
+    // messages description
+    'price_hint' => 'Use a dot as decimal separator. E.g: 10.00 = ten euros, 10000 = ten thousand euros.',
 ];

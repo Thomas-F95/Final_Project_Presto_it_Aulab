@@ -118,4 +118,7 @@ return [
     'cart_cleared'          => 'Carrito vaciado.',
     'cart_error'            => 'Artículo no disponible.',
     'cart_own_article'      => 'No puedes añadir tu propio anuncio al carrito.',
+
+    // messages description
+    'price_hint' => 'Usa el punto como separador decimal. Ej: 10.00 = diez euros, 10000 = diez mil euros.',
 ];

@@ -1,5 +1,7 @@
 // Carosello immagini pagina dettaglio articolo
-function changeSlide(direction) {
+// Esposta globalmente perché chiamata con onclick nell'HTML
+
+window.changeSlide = function (direction) {
     const images = document.querySelectorAll('.article-carousel-img');
     if (!images.length) return;
 
@@ -46,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // # 2. FUNZIONE PRINCIPALE: Ricalcola il totale e prepara i dati
     function updateTotal() {
-        let total = 0; 
-        let selectedCount = 0; 
-        inputsContainer.innerHTML = ''; 
+        let total = 0;
+        let selectedCount = 0;
+        inputsContainer.innerHTML = '';
 
         // # Cicla ogni singolo checkbox presente nella pagina
         checkboxes.forEach(checkbox => {
@@ -68,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 // # B) PREPARAZIONE DATI PER IL BACKEND
                 // # Crea un nuovo elemento HTML di tipo <input>
                 const input = document.createElement('input');
-                input.type = 'hidden'; 
-                input.name = 'selected_items[]'; 
-                input.value = checkbox.value; 
+                input.type = 'hidden';
+                input.name = 'selected_items[]';
+                input.value = checkbox.value;
 
                 // # Inserisce fisicamente questo nuovo input dentro il form
                 inputsContainer.appendChild(input);

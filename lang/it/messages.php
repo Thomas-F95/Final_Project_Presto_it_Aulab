@@ -8,7 +8,7 @@ return [
     'register'          => 'Registrati',
     'logout'            => 'Esci',
     'my_articles'       => 'I miei annunci',
-    'insert_article'    => 'Inserisci Annuncio',
+    'insert_article'    => '+ Annuncio',
     'revisor_panel'     => 'Revisori',
     'work_with_us'      => 'Lavora con noi',
     'search'            => 'Cerca',

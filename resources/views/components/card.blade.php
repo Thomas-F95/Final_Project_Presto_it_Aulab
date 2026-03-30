@@ -1,7 +1,7 @@
 <div class="article-card">
 
     {{-- Mostra la prima immagine reale se disponibile, altrimenti usa picsum --}}
-    <img src="{{ $article->images->first() ? asset('storage/' . $article->images->first()->path) : 'https://picsum.photos/seed/' . $article->id . '/400/180' }}"
+    <img src="{{ $article->images->first() ? asset('storage/' . $article->images->first()->path) : 'https://picsum.photos/seed/' . $article->id . '/220/220' }}"
         alt="Immagine di {{ $article->title }}" class="article-card-img">
 
     <div class="article-card-body">

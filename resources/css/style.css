@@ -236,15 +236,12 @@ body {
 }
 .article-card-img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-.article-card-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 220px;
+    object-fit: contain;
     object-position: center;
-    background-color: var(--color-sand-50);
+    background-color: var(--color-cream);
+    padding: 8px;
+
 }
 .article-card-body {
     display: flex;
@@ -310,15 +307,18 @@ body {
 
 /* CAROUSEL PLACEHOLDER */
 .article-carousel {
-    position: relative;
+   position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--color-sand-50);
+    max-width: 400px;
+    margin: 0 auto;
 }
 .article-carousel-img {
     width: 100%;
     height: 400px;
     object-fit: cover;
+    object-position: center;
     display: none;
 }
 .article-carousel-img.active {

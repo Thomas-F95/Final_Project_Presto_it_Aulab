@@ -31,7 +31,7 @@
                     @endforeach
                 @else
                     {{-- Segnaposto se non ci sono immagini --}}
-                    <img src="https://picsum.photos/seed/{{ $article->id }}/800/400" alt="{{ $article->title }}"
+                    <img src="https://picsum.photos/seed/{{ $article->id }}/400/400" alt="{{ $article->title }}"
                         class="article-carousel-img active">
                 @endif
                 <button class="carousel-btn carousel-btn-prev" onclick="changeSlide(-1)">‹</button>

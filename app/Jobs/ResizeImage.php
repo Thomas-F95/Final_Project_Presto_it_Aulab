@@ -10,6 +10,8 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Spatie\Image\Image as SpatieImage;
 use Spatie\Image\Enums\Fit;
+use Spatie\Image\Enums\AlignPosition;
+
 
 class ResizeImage implements ShouldQueue
 {
@@ -25,9 +27,20 @@ class ResizeImage implements ShouldQueue
         // Percorso assoluto del file nello storage
         $path = storage_path('app/public/' . $this->image->path);
 
-        // Crop centrato a 400x400
+        // Percorso assoluto del logo watermark
+        $watermarkPath = public_path('images/watermark.png');
+
+        // Crop centrato a 400x400 e applica il watermark in basso a destra
         SpatieImage::load($path)
             ->fit(Fit::Crop, 400, 400)
+            ->watermark(
+                $watermarkPath,
+                AlignPosition::BottomRight,
+                paddingX: 10,
+                paddingY: 10,
+                width: 80,
+                height: 40,
+            )
             ->save($path);
     }
 }

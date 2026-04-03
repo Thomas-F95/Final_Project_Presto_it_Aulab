@@ -11,6 +11,9 @@ use Livewire\WithFileUploads;
 use App\Jobs\ResizeImage;
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
+use App\Jobs\RemoveFaces;
+// Gestione per le catene dei processi Google per sicrurezza,tag, offuscamento e ridimensione
+use Illuminate\Support\Facades\Bus;
 
 
 class CreateArticleForm extends Component
@@ -74,16 +77,19 @@ class CreateArticleForm extends Component
         // Salva ogni immagine nello storage e crea il record nel DB
         foreach ($this->images as $image) {
             $path = $image->store('articles', 'public');
+
             $imageModel = Image::create([
                 'article_id' => $article->id,
                 'path'       => $path,
             ]);
 
-            // Chain dei job: prima resize, poi safe search, poi labels
-            ResizeImage::withChain([
+            // Chain dei job: Verifica contenuti espliciti, Genera i tag (US8), Identifica e oscura i volti (US8), ridimensiona e mette il watermark (US9)
+            Bus::chain([
                 new GoogleVisionSafeSearch($imageModel),
                 new GoogleVisionLabelImage($imageModel),
-            ])->dispatch($imageModel);
+                new RemoveFaces($imageModel),
+                new ResizeImage($imageModel),
+            ])->dispatch();
         }
 
         $this->reset(['title', 'description', 'price', 'category_id', 'images']);

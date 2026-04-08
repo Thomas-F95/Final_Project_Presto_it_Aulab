@@ -158,4 +158,12 @@ return [
 
     // messages description
     'price_hint' => 'Usa el punto como separador decimal. Ej: 10.00 = diez euros, 10000 = diez mil euros.',
+
+    // About Us
+    'about_us_title' => 'Sobre Nosotros',
+    'about_us_description' => 'Somos un equipo apasionado de desarrolladores listos para dar vida a proyectos increíbles.',
+    // Contacts
+    'contacts_title' => 'Contáctanos',
+    'contacts_description' => '¿Tienes alguna pregunta? Escríbenos para cualquier información, ¡estaremos encantados de ayudarte!',
+
 ];

@@ -156,4 +156,11 @@ return [
 
     // messages description
     'price_hint' => 'Usa il punto come separatore decimale. Es: 10.00 = dieci euro, 10000 = diecimila euro.',
+
+    // About Us
+    'about_us_title' => 'Chi Siamo',
+    'about_us_description' => 'Siamo un team appassionato di sviluppatori pronti a dare vita a progetti incredibili.',
+    // Contacts
+    'contacts_title' => 'Contattaci',
+    'contacts_description' => 'Hai delle domande? Scrivici per qualsiasi informazione, saremo felici di aiutarti!',
 ];

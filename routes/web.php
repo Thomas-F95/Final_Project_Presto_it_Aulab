@@ -17,6 +17,16 @@ Route::get('/work-with-us', [PublicController::class, 'workWithUs'])->name('work
 
 Route::get('/regulations', fn() => view('regulations'))->name('regulations');
 
+// Rotta per la pagina Chi Siamo
+Route::get('/about-us', function () {
+    return view('about_us');
+})->name('about_us');
+
+// Rotta per la pagina Contatti
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('contacts');
+
 // Invio richiesta revisore — solo utenti loggati
 Route::post('/work-with-us', [PublicController::class, 'sendRevisorRequest'])->name('work-with-us.send')->middleware('auth');
 

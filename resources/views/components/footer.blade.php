@@ -21,10 +21,10 @@
                             class="footer-link small">{{ __('messages.all_articles') }}</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="footer-link small">{{ __('messages.about') }}</a>
+                        <a href="{{ route('about_us') }}" class="footer-link small">{{ __('messages.about') }}</a>
                     </li>
                     <li>
-                        <a href="#" class="footer-link small">{{ __('messages.contacts') }}</a>
+                        <a href="{{ route('contacts') }}" class="footer-link small">{{ __('messages.contacts') }}</a>
                     </li>
                 </ul>
             </div>

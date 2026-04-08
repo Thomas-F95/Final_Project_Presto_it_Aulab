@@ -49,10 +49,12 @@
                 <a href="{{ route('cart.index') }}" class="btn-presto-outline">
                     ← {{ __('messages.cart_back') }}
                 </a>
-                {{-- Il checkout reale sarà implementato in futuro --}}
-                <button class="btn-presto" disabled>
-                    {{ __('messages.cart_confirm') }} (coming soon)
-                </button>
+                <form method="POST" action="{{ route('cart.checkout.session') }}">
+                    @csrf
+                    <button type="submit" class="btn-presto">
+                        {{ __('messages.cart_confirm') }}
+                    </button>
+                </form>
             </div>
 
         </div>

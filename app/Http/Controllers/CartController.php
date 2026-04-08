@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\CartItem;
 use Illuminate\Support\Facades\Auth;
+use Stripe\Stripe;
+use Stripe\Checkout\Session;
 
 class CartController extends Controller
 {
@@ -78,5 +80,56 @@ class CartController extends Controller
         $total = $cartItems->sum(fn($item) => $item->article->price);
 
         return view('cart.checkout', compact('cartItems', 'total'));
+    }
+
+    // Crea la sessione di pagamento Stripe e reindirizza al checkout
+    public function createCheckoutSession()
+    {
+        $cartItems = CartItem::with('article')
+            ->where('user_id', Auth::id())
+            ->get();
+
+        if ($cartItems->isEmpty()) {
+            return redirect()->route('cart.index');
+        }
+
+        Stripe::setApiKey(config('services.stripe.secret'));
+
+        // Costruiamo i line_items per Stripe — Stripe vuole i centesimi quindi moltiplichiamo per 100
+        $lineItems = $cartItems->map(fn($item) => [
+            'price_data' => [
+                'currency'     => 'eur',
+                'unit_amount'  => (int) round($item->article->price * 100),
+                'product_data' => [
+                    'name' => $item->article->title,
+                ],
+            ],
+            'quantity' => 1,
+        ])->values()->toArray();
+
+        $session = Session::create([
+            'payment_method_types' => ['card'],
+            'line_items'           => $lineItems,
+            'mode'                 => 'payment',
+            'success_url'          => route('cart.checkout.success') . '?session_id={CHECKOUT_SESSION_ID}',
+            'cancel_url'           => route('cart.checkout.cancel'),
+        ]);
+
+        return redirect($session->url);
+    }
+
+    // Pagina di successo — svuota il carrello dopo il pagamento
+    public function success()
+    {
+        // Svuota il carrello dopo il pagamento
+        CartItem::where('user_id', Auth::id())->delete();
+
+        return view('cart.success');
+    }
+
+    // Pagina di annullamento pagamento
+    public function cancel()
+    {
+        return view('cart.cancel');
     }
 }

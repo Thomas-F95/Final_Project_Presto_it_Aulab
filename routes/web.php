@@ -57,4 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/cart/remove/{cartItem}', [CartController::class, 'remove'])->name('cart.remove');
     Route::delete('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
     Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+    Route::post('/cart/checkout/session', [CartController::class, 'createCheckoutSession'])->name('cart.checkout.session');
+    Route::get('/cart/checkout/success', [CartController::class, 'success'])->name('cart.checkout.success');
+    Route::get('/cart/checkout/cancel', [CartController::class, 'cancel'])->name('cart.checkout.cancel');
 });

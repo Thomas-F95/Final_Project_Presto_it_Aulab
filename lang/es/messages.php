@@ -166,4 +166,13 @@ return [
     'contacts_title' => 'Contáctanos',
     'contacts_description' => '¿Tienes alguna pregunta? Escríbenos para cualquier información, ¡estaremos encantados de ayudarte!',
 
+    // edit and Destroy
+    'article_edit'           => 'Editar',
+    'article_edit_subtitle'  => 'Actualiza los datos de tu anuncio',
+    'article_save'           => 'Guardar cambios',
+    'article_delete'         => 'Eliminar',
+    'article_deleted'        => 'Anuncio eliminado correctamente.',
+    'article_delete_confirm' => '¿Estás seguro de que quieres eliminar este anuncio?',
+    'images_existing'        => 'Imágenes actuales',
+    'images_new'             => 'Añadir nuevas imágenes',
 ];

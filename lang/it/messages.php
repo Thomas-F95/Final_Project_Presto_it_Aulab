@@ -163,4 +163,14 @@ return [
     // Contacts
     'contacts_title' => 'Contattaci',
     'contacts_description' => 'Hai delle domande? Scrivici per qualsiasi informazione, saremo felici di aiutarti!',
+
+    // Edit and Destroy
+    'article_edit'           => '   Modifica  ',
+    'article_edit_subtitle'  => 'Modifica i campi del tuo annuncio',
+    'article_save'           => 'Salva modifiche',
+    'article_delete'         => 'Elimina',
+    'article_deleted'        => 'Annuncio eliminato con successo.',
+    'article_delete_confirm' => 'Sei sicuro di voler eliminare questo annuncio?',
+    'images_existing'        => 'Immagini attuali',
+    'images_new'             => 'Aggiungi nuove immagini',
 ];

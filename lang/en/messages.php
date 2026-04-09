@@ -166,5 +166,15 @@ return [
     'contacts_title' => 'Contact Us',
     'contacts_description' => 'Do you have any questions? Write to us for any information, we will be happy to help!',
 
+    // Edit and Destroy
+    'article_edit'           => 'Edit',
+    'article_edit_subtitle'  => 'Update your listing details',
+    'article_save'           => 'Save changes',
+    'article_delete'         => 'Delete',
+    'article_deleted'        => 'Listing deleted successfully.',
+    'article_delete_confirm' => 'Are you sure you want to delete this listing?',
+    'images_existing'        => 'Current images',
+    'images_new'             => 'Add new images',
+
 
 ];

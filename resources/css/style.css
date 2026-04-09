@@ -900,3 +900,20 @@ body {
     padding: 2px 8px;
     border-radius: 999px;
 }
+
+/* Button edit article */
+.btn-danger-presto {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-danger-presto:hover {
+    background-color: #fca5a5;
+}

@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class ArticleController extends Controller
@@ -87,7 +88,12 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        //
+        // Solo il proprietario può modificare
+        if ($article->user_id !== Auth::id()) {
+            abort(403);
+        }
+
+        return view('article.edit', compact('article'));
     }
 
     public function update(Request $request, Article $article)
@@ -97,6 +103,18 @@ class ArticleController extends Controller
 
     public function destroy(Article $article)
     {
-        //
+        // Solo il proprietario può eliminare
+        if ($article->user_id !== Auth::id()) {
+            abort(403);
+        }
+
+        // Elimina le immagini dallo storage
+        foreach ($article->images as $image) {
+            Storage::disk('public')->delete($image->path);
+        }
+
+        $article->delete();
+
+        return redirect()->route('article.my')->with('success', __('messages.article_deleted'));
     }
 }

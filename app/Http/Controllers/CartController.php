@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderCancelled;
+use App\Mail\OrderConfirmed;
 use App\Models\Article;
 use App\Models\CartItem;
 use Illuminate\Support\Facades\Auth;
-use Stripe\Stripe;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Checkout\Session;
+use Stripe\Stripe;
 
 class CartController extends Controller
 {
@@ -121,6 +124,24 @@ class CartController extends Controller
     // Pagina di successo — svuota il carrello dopo il pagamento
     public function success()
     {
+        $cartItems = CartItem::with('article')
+            ->where('user_id', Auth::id())
+            ->get();
+
+        // Prepara i dati per la mail
+        $items = $cartItems->map(fn($item) => [
+            'title' => $item->article->title,
+            'price' => $item->article->price,
+        ])->toArray();
+
+        $total = $cartItems->sum(fn($item) => $item->article->price);
+
+        // Invia mail di conferma
+        Mail::to(Auth::user()->email)->send(new OrderConfirmed(
+            userName: Auth::user()->name,
+            items: $items,
+            total: $total,
+        ));
         // Svuota il carrello dopo il pagamento
         CartItem::where('user_id', Auth::id())->delete();
 
@@ -130,6 +151,24 @@ class CartController extends Controller
     // Pagina di annullamento pagamento
     public function cancel()
     {
+        $cartItems = CartItem::with('article')
+            ->where('user_id', Auth::id())
+            ->get();
+
+        // Prepara i dati per la mail
+        $items = $cartItems->map(fn($item) => [
+            'title' => $item->article->title,
+            'price' => $item->article->price,
+        ])->toArray();
+
+        $total = $cartItems->sum(fn($item) => $item->article->price);
+
+        // Invia mail di annullamento — il carrello NON viene svuotato per riprovare il pagamento
+        Mail::to(Auth::user()->email)->send(new OrderCancelled(
+            userName: Auth::user()->name,
+            items: $items,
+            total: $total,
+        ));
         return view('cart.cancel');
     }
 }

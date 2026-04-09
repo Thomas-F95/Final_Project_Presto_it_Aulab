@@ -15,9 +15,10 @@ class PublicController extends Controller
 {
     public function homepage()
     {
-        // Ultimi 4 articoli per la homepage -solo annunci approvati
+        // Ultimi 4 articoli per la homepage -solo annunci approvati escludendo quelli dell'utente loggato
         $articles = Article::with(['category', 'user'])
             ->where('status', 'approved')
+            ->when(auth()->check(), fn($q) => $q->where('user_id', '!=', auth()->id()))
             ->orderBy('created_at', 'desc')
             ->take(4)
             ->get();

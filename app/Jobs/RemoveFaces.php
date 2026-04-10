@@ -104,8 +104,9 @@ class RemoveFaces implements ShouldQueue
                     continue;
                 }
 
+                // Ovale sul volto al posto del rettangolo nero
                 $black = imagecolorallocate($src, 0, 0, 0);
-                imagefilledrectangle($src, $x, $y, $x2, $y2, $black);
+                imagefilledellipse($src, (int)($x + $w / 2), (int)($y + $h / 2), $w, $h, $black);
 
                 Log::info("[RemoveFaces] Rettangolo nero applicato sul volto.");
             }

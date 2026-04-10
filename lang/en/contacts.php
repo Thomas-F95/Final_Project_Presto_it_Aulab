@@ -9,8 +9,7 @@ return [
     'message' => [
         'title' => 'Your message',
         'placeholder' => 'Write your request in detail here, we will be happy to help...',
-        'required' => 'The application field is required.',
-        'min'      => 'The application must be at least 20 characters.',
+        'required' => 'The message field is required.',
 
     ],
     'send_application'      => 'Send Application',

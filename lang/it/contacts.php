@@ -9,8 +9,7 @@ return [
     'message' => [
         'title' => 'Il tuo messaggio',
         'placeholder' => 'Scrivi qui la tua richiesta in modo dettagliato, saremo felici di aiutarti...',
-        'required' => 'La richiesta è obbligatoria.',
-        'min'      => 'La richiesta deve essere di almeno 20 caratteri.',
+        'required' => 'Il mesaggio è obbligatoria.',
     ],
      'send_application'      => 'Invia Messaggio',
 

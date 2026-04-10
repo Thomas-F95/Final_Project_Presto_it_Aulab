@@ -74,10 +74,9 @@ class PublicController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
-            'contacts' => ['required', 'string', 'min:20'],
+            'contacts' => ['required', 'string'],
         ], [
             'contacts.required' => __('contacts.message.required'),
-            'contacts.min'      => __('contacts.message.min'),
         ]);
 
         Mail::to(config('mail.from.address'))->send(new ContactApplication(

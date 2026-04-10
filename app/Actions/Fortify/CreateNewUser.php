@@ -47,8 +47,8 @@ class CreateNewUser implements CreatesNewUsers
                 'password.required' => __('messages.password_required'),
                 'password.confirmed' => __('messages.password_confirmed'),
 
-                'password_confirmation.same' => __('messages.password_confirmed'),
-                'password_confirmation.required' => __('messages.password_confirmed'), // Messaggio opzionale se lasciano il campo vuoto
+                
+                'password.confirmation.required' => __('validation.password.password_confirmation'), // Messaggio opzionale se lasciano il campo vuoto
             ]
         )->validate();
 

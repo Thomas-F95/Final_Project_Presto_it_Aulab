@@ -10,7 +10,7 @@
                 <p class="auth-subtitle">{{ __('messages.login_subtitle') }}</p>
 
 
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login') }}" novalidate>
                     @csrf
 
                     {{-- Email --}}

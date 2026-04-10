@@ -51,7 +51,11 @@ return [
     'doesnt_contain' => 'The :attribute field must not contain any of the following: :values.',
     'doesnt_end_with' => 'The :attribute field must not end with one of the following: :values.',
     'doesnt_start_with' => 'The :attribute field must not start with one of the following: :values.',
-    'email' => 'The :attribute field must be a valid email address.',
+
+    'email_address' => [
+        'email' => 'The :attribute field must be a valid email address.',
+        'symbols' => 'The :attribute field must contain at least one "@" symbol.',
+    ],
     'encoding' => 'The :attribute field must be encoded in :encoding.',
     'ends_with' => 'The :attribute field must end with one of the following: :values.',
     'enum' => 'The selected :attribute is invalid.',
@@ -184,6 +188,12 @@ return [
         ],
     ],
 
+    'custom' => [
+        'password_confirmation' => [
+            'same' => 'The passwords do not match, please try again.',
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
@@ -199,6 +209,7 @@ return [
         'name'        => 'name',
         'email'       => 'email address',
         'password'    => 'password',
+        'password_confirmation' => 'confirm password ',
         'price'       => 'price',
         'title'       => 'title',
         'category_id' => 'category',

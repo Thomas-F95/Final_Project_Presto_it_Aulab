@@ -16,5 +16,4 @@ return [
    'failed'   => 'Credenziali non valide. Riprova.',
     'password' => 'La password inserita non è corretta.',
     'throttle' => 'Troppi tentativi di login. Riprova tra :seconds secondi.',
-
 ];

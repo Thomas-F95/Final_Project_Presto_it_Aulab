@@ -23,6 +23,7 @@
                             <label for="name" class="presto-label">{{ __('messages.full_name') }}</label>
                             <input type="text" id="name" name="name"
                                 class="presto-input @error('name') is-invalid @enderror"
+                                placeholder="{{ __('messages.name_placeholder') }}"
                                 value="{{ auth()->check() ? auth()->user()->name : old('name') }}"
                                 {{ auth()->check() ? 'readonly' : '' }}>
                             @error('name')
@@ -35,6 +36,7 @@
                             <label for="email" class="presto-label">{{ __('messages.email') }}</label>
                             <input type="email" id="email" name="email"
                                 class="presto-input @error('email') is-invalid @enderror"
+                                placeholder="{{ __('messages.email_placeholder') }}"
                                 value="{{ auth()->check() ? auth()->user()->email : old('email') }}"
                                 {{ auth()->check() ? 'readonly' : '' }}>
                             @error('email')

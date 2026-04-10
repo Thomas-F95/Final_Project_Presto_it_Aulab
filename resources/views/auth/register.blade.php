@@ -49,7 +49,7 @@
                         <label for="password_confirmation"
                             class="presto-label">{{ __('messages.confirm_password') }}</label>
                         <input type="password" id="password_confirmation" name="password_confirmation"
-                            class="presto-input @error('password') is-invalid @enderror" 
+                            class="presto-input @error('password_confirmation') is-invalid @enderror" 
                              placeholder="••••••••">
                              @error('password_confirmation')
                             <div class="auth-error">{{ $message }}</div>

@@ -51,7 +51,11 @@ return [
     'doesnt_contain' => 'Il campo :attribute non deve contenere alcuno dei seguenti valori: :values.',
     'doesnt_end_with' => 'Il campo :attribute non deve terminare con uno dei seguenti: :values.',
     'doesnt_start_with' => 'Il campo :attribute non deve iniziare con uno dei seguenti: :values.',
-    'email' => 'Il campo :attribute deve essere un indirizzo email valido.',
+    
+    'email_address' => [
+        'email' => 'Il campo :attribute deve essere un indirizzo email valido.',
+        'symbols' => 'Il campo :attribute deve contenere almeno un simbolo "@".',
+    ],
     'encoding' => 'Il campo :attribute deve essere codificato in :encoding.',
     'ends_with' => 'Il campo :attribute deve terminare con uno dei seguenti: :values.',
     'enum' => 'Il valore selezionato per :attribute non è valido.',
@@ -127,7 +131,8 @@ return [
         'numbers' => 'Il campo :attribute deve contenere almeno un numero.',
         'symbols' => 'Il campo :attribute deve contenere almeno un simbolo.',
         'uncompromised' => 'Il valore inserito per :attribute è apparso in un data leak. Scegli un :attribute diverso.',
-    ],
+        
+        ],
     'present' => 'Il campo :attribute deve essere presente.',
     'present_if' => 'Il campo :attribute deve essere presente quando :other è :value.',
     'present_unless' => 'Il campo :attribute deve essere presente a meno che :other sia :value.',
@@ -183,6 +188,7 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+    
     'custom' => [
         'password_confirmation' => [
             'same' => 'Le password non corrispondono, riprova.',
@@ -204,6 +210,7 @@ return [
         'name'     => 'nome',
         'email'    => 'indirizzo email',
         'password' => 'password',
+        'password_confirmation' => 'conferma password',
         'price'    => 'prezzo',
         'title'    => 'titolo',
         'category_id' => 'categoria',

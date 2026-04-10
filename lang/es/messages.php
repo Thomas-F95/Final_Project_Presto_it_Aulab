@@ -60,14 +60,14 @@ return [
     'email_placeholder' => 'nombre@ejemplo.com',
     'name_placeholder'  => 'Juan García',
 
-    //Auth Error
+    //Sing up Error
     'name_required'     => 'El nombre es obligatorio.',
     'name_max'          => 'El nombre no puede superar los 255 caracteres.',
     'email_required'    => 'El correo electrónico es obligatorio.',
     'email_invalid'     => 'Introduce un correo electrónico válido.',
     'email_taken'       => 'Este correo electrónico ya está registrado.',
     'password_required' => 'La contraseña es obligatoria.',
-    'password_confirmed' => 'La contraseña de confirmación no coincide con la contraseña.',
+    'password_confirmed' => 'La contraseña no coincide con la contraseña de confirmación.',
 
     // Hero
     'hero_subtitle'     => 'El portal número uno para vender y comprar artículos de todo tipo.',

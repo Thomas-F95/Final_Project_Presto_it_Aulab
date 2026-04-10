@@ -60,14 +60,15 @@ return [
     'email_placeholder' => 'name@example.com',
     'name_placeholder'  => 'John Doe',
 
-    // Auth Error
+    // Sing up Error
     'name_required'     => 'The name is required.',
     'name_max'          => 'The name may not be greater than 255 characters.',
     'email_required'    => 'The email is required.',
     'email_invalid'     => 'Please enter a valid email address.',
     'email_taken'       => 'This email is already taken.',
     'password_required' => 'The password is required.',
-    'password_confirmed' => 'The confirmation password does not match the password.',
+    'password_confirmed' => 'The password does not match with the confirmation password.',
+    
     // Hero
     'hero_subtitle'     => 'The number one portal to buy and sell items of all kinds.',
     'view_articles'     => 'Browse listings',

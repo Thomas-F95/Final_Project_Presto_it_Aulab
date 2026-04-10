@@ -231,9 +231,9 @@ body {
     margin-top: 4px;
 }
 
-/* =========================================
-   STILE PAGINAZIONE - PRESTO.IT (Con Variabili)
-   ========================================= */
+
+   /* STILE BOTTONE PAGINAZIONE <- 1,2,3 -> */
+  
 
 .pagination .page-link {
     color: var(--color-terra-600) ; 

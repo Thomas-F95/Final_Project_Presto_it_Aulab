@@ -172,6 +172,9 @@ return [
     'article_delete_confirm' => 'Are you sure you want to delete this listing?',
     'images_existing'        => 'Current images',
     'images_new'             => 'Add new images',
-
+    // Revisor remove
+    'revisor_remove'         => 'Resign role',
+    'revisor_remove_confirm' => 'Are you sure you want to resign as revisor?',
+    'revisor_remove_success' => 'You have resigned as revisor.',
 
 ];

@@ -2,9 +2,17 @@
 
 <div class="article-card">
 
-    {{-- Mostra la prima immagine reale se disponibile, altrimenti usa picsum --}}
-    <img src="{{ $article->images->first() ? asset('storage/' . $article->images->first()->path) : 'https://picsum.photos/seed/' . $article->id . '/220/220' }}"
-        alt="Immagine di {{ $article->title }}" class="article-card-img">
+    {{-- Mostra la prima immagine reale se disponibile, altrimenti usa watermark Presto.it --}}
+    @if ($article->images->first())
+        <img src="{{ asset('storage/' . $article->images->first()->path) }}" alt="Immagine di {{ $article->title }}"
+            class="article-card-img">
+    @else
+        <div class="article-card-img d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/watermark.png') }}" alt="Placeholder"
+                style="width: 204px; height: 200px; object-fit: contain; opacity: 0.3;">
+        </div>
+    @endif
+
 
     <div class="article-card-body">
 

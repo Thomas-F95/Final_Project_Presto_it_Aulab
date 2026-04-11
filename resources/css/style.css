@@ -290,6 +290,7 @@ body {
     object-position: center;
     background-color: var(--color-cream);
     padding: 8px;
+    flex-shrink: 0;
 
 }
 .article-card-body {
@@ -978,5 +979,10 @@ body {
         width: 100%;
     }
 
+    .article-card-img.placeholder-img {
+    object-fit: contain;
+    padding: 20px;
+    opacity: 0.3;
+}
     
 }

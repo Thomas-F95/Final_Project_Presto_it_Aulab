@@ -172,4 +172,9 @@ return [
     'article_delete_confirm' => '¿Estás seguro de que quieres eliminar este anuncio?',
     'images_existing'        => 'Imágenes actuales',
     'images_new'             => 'Añadir nuevas imágenes',
+
+    // Revisor remove
+    'revisor_remove'         => 'Renunciar al rol',
+    'revisor_remove_confirm' => '¿Estás seguro de que quieres renunciar como revisor?',
+    'revisor_remove_success' => 'Has renunciado al rol de revisor.',
 ];

@@ -59,6 +59,7 @@ Route::middleware(['auth', 'revisor'])->prefix('revisor')->group(function () {
     Route::post('/approve/{article}', [RevisorController::class, 'approve'])->name('revisor.approve');
     Route::post('/reject/{article}', [RevisorController::class, 'reject'])->name('revisor.reject');
     Route::post('/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
+    Route::post('/remove/{user}', [RevisorController::class, 'removeRevisor'])->name('revisor.remove');
 });
 
 // Rotte carrello — solo utenti loggati

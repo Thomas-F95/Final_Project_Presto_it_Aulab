@@ -54,8 +54,8 @@
                         <input type="password" id="password_confirmation" name="password_confirmation"
                             class="presto-input @error('password_confirmation') is-invalid @enderror"
                             placeholder="••••••••">
-                        <button type="button" class="toggle-password" data-target="password">
-                            <i class="fa-regular fa-eye" id="icon-password"></i>
+                        <button type="button" class="toggle-password" data-target="password_confirmation">
+                            <i class="fa-regular fa-eye" id="icon-password_confirmation"></i>
                         </button>
                         @error('password_confirmation')
                             <div class="auth-error">{{ $message }}</div>

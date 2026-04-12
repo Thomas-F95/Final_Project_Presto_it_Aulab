@@ -35,6 +35,12 @@ class RemoveFaces implements ShouldQueue
             Log::warning("[RemoveFaces] File NON trovato, job interrotto.");
             return;
         }
+        // Salta l'oscuramento per la categoria Libri e musica
+        $article = $this->image->article()->with('category')->first();
+        if ($article && strtolower($article->category->name) === 'libri e musica') {
+            Log::info("[RemoveFaces] Categoria 'Libri e musica' — oscuramento saltato.");
+            return;
+        }
 
         $dims = getimagesize($path);
         Log::info("[RemoveFaces] Dimensioni immagine: {$dims[0]}x{$dims[1]}");

@@ -1,6 +1,6 @@
 🇩🇪
 
-## Abschlussprojekt des Aulab Hackademy Bootcamps. 
+## Abschlussprojekt des Aulab Hackademy Bootcamps 
 
 Entwicklung einer voll funktionsfähigen Kleinanzeigen-Plattform unter Anwendung von Agile (Scrum) Methoden.
 

@@ -43,3 +43,53 @@ Stack Tecnologico:
 - Frontend: JavaScript, Livewire, Blade, Bootstrap.
 
 - Database & Tool: MySQL, Git/GitHub
+
+
+🇬🇧
+
+## Aulab Hackademy Final Project
+
+I have developed a complete e-commerce classified ads platform, simulating a real work environment using the Agile (Scrum) methodology.
+
+Main Features:
+
+- Role Management: Permission system for Users, Reviewers, and Admins.
+
+- Multilingualism: i18n implementation (Italian, English, Spanish).
+
+- Performance: Asynchronous image upload and automatic resizing via Laravel Queues.
+
+- Search: Integrated full-text search engine for categories and keywords.
+Technology Stack:
+
+- Backend: PHP 8, Laravel (MVC).
+
+- Frontend: JavaScript, Livewire, Blade, Bootstrap.
+
+- Database & Tools: MySQL, Git/GitHub.
+Spanish Version
+
+
+🇪🇸
+
+## Proyecto final del bootcamp Aulab Hackademy
+
+He desarrollado una plataforma completa de anuncios de comercio electrónico, simulando un entorno de trabajo real con metodología Agile (Scrum).
+
+Características principales:
+
+- Gestión de Roles: Sistema de permisos para Usuarios, Revisores y Administradores.
+
+- Multilingüismo: Implementación de i18n (Italiano, Inglés, Español).
+
+- Rendimiento: Subida asíncrona de imágenes y redimensionamiento automático mediante Laravel Queues.
+
+- Búsqueda: Motor de búsqueda de texto completo integrado para categorías y palabras clave.
+
+Stack Tecnológico:
+- Backend: PHP 8, Laravel (MVC).
+
+- Frontend: JavaScript, Livewire, Blade, Bootstrap.
+
+- Base de datos y herramientas: MySQL, Git/GitHub.
+
